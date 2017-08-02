@@ -5,8 +5,8 @@ var Header = React.createClass({
 
     return (
       <div className="jumbotron text-center vertical-center">
-        <h1>New York Times Article Scrubber</h1>
-        <h3>Search for and save articles of interest!</h3>
+        <h1 className="center-align">New York Times Article Scrubber</h1>
+        <h3 className="center-align">Search for and save articles of interest!</h3>
       </div>
     )
   }
