@@ -5,6 +5,12 @@ module.exports = {
   output: {
     filename: "./public/bundle.js"
   },
+  resolve: {
+    alias: {
+      Main: 'public/components/Main.jsx',
+      Header: 'public/components/Header.jsx'
+    }
+  },
   // This section desribes the transformations we will perform
   module: {
     loaders: [
