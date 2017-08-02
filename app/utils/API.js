@@ -1,29 +1,30 @@
 var axios = require('axios');
 
 var API = (topic, startyear, endyear) => {
-  axios.get(`https://api.nytimes.com/svc/topstories/v2/${topic}.json`, {
+  axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {
       params: {
-        apikey: '872049e9e7824b7d9f866479292c4d9e'
+        apikey: '872049e9e7824b7d9f866479292c4d9e', 
+        q: topic, 
+        begin_date: `${startyear}0101`,
+        end_date: `${endyear}1231`
       }
     })
-    .then(function (data) {
-      console.log(data.request.response);
+    .then(function (res) {
+      // console.log(res.data.response.docs);
 
-      var selectdata = []; 
+      var selectdata = [];
 
-      for (var i = 0; i < numresults; i++) {
-        if (data.request.response.results[i].published_date < startyear && data.request.response.results[i].published_date > endyear) {
-          var title = data.request.response.results[i].title;
-          var url = data.request.response.results[i].url;
+      for (var i = 0; i < res.data.response.docs.length; i++) {
+        var snippet = res.data.response.docs[i].snippet;
+        var web_url = res.data.response.docs[i].web_url;
 
-          selectdata.push({
-            title,
-            url
-          })
-        }
+        selectdata.push({
+          snippet,
+          web_url
+        })
       }
 
-      return selectdata
+      return(selectdata)
     })
     .catch(function (error) {
       console.log(error);
