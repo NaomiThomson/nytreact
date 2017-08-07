@@ -9,22 +9,9 @@ var API = (topic, startyear, endyear) => {
         end_date: `${endyear}1231`
       }
     })
-    .then(function (res) {
-      // console.log(res.data.response.docs);
-
-      var selectdata = [];
-
-      for (var i = 0; i < res.data.response.docs.length; i++) {
-        var snippet = res.data.response.docs[i].snippet;
-        var web_url = res.data.response.docs[i].web_url;
-
-        selectdata.push({
-          snippet,
-          web_url
-        })
-      }
-
-      return(selectdata)
+    .then(function (res) {    
+      console.log(res.data.response.docs)
+      return res.data.response.docs
     })
     .catch(function (error) {
       console.log(error);
