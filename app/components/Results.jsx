@@ -1,5 +1,4 @@
 var React = require('react');
-var Search = require('./SearchScreen.jsx');
 
 var ResultsScreen = React.createClass({
 

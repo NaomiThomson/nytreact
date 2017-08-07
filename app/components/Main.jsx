@@ -1,8 +1,8 @@
 var React = require('react');
 var Header = require('./Header.jsx');
-var SearchScreen = require('./SearchScreen.jsx');
-var ResultsScreen = require('./ResultsScreen.jsx');
-var SavedArticles = require('./SavedArticles.jsx');
+var Search = require('./Search.jsx');
+var Results = require('./Results.jsx');
+var Saved = require('./Saved.jsx');
 
 var Main = React.createClass({
   getInitialState: function () {
@@ -20,9 +20,9 @@ var Main = React.createClass({
     return (
       <div>
         <Header /><br />
-        <SearchScreen onNewNewsData={this.handleNewNewsData} /><br />
-        <ResultsScreen  data={this.state.newsdata}/><br />
-        <SavedArticles /><br />
+        <Search onNewNewsData={this.handleNewNewsData} /><br />
+        <Results data={this.state.newsdata}/><br />
+        <Saved /><br />
       </div>
     )
   }
