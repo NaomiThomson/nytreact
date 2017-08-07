@@ -13,9 +13,7 @@ var Main = React.createClass({
   },
 
   handleNewNewsData: function (newsdata) {
-    console.log(newsdata);
     this.setState({newsdata});
-    console.log(this.state);
   },
 
   render: function () {

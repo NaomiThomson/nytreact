@@ -10,10 +10,12 @@ var ResultsScreen = React.createClass({
         return (
           <div className="card blue-grey darken-1">
             <div className="card-content white-text">
-              <span className="card-title" href={article.web_url}>{article.headline.main}</span>
+              <span className="card-title">{article.headline.main}</span>
+              <p>{article.snippet}</p>
             </div>
             <div className="card-action">
-              <a className="waves-effect waves-light btn" id="save">save</a>
+              <a href={article.web_url} target="_blank">Read more</a>
+              <a href="#" id="save">save</a>
             </div>
           </div>
         )

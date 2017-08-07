@@ -40,19 +40,19 @@ var SearchScreen = React.createClass({
             <div className="row">
               <div className="input-field col s12">
                 <input id="topic" type="text" className="validate" ref="topic" />
-                <label for="topic">Topic</label>
+                <label for="topic" className="active">Topic</label>
               </div>
             </div>
             <div className="row">
               <div className="input-field col s12">
                 <input id="startyear" type="text" className="validate" ref="startyear" />
-                <label for="startyear">Start Year</label>
+                <label for="startyear" className="active">Start Year</label>
               </div>
             </div>
             <div className="row">
               <div className="input-field col s12">
                 <input id="endyear" type="text" className="validate" ref="endyear" />
-                <label for="endyear">End Year</label>
+                <label for="endyear" className="active">End Year</label>
               </div>
             </div>
             <button className="waves-effect waves-light btn" id="search">search</button>
