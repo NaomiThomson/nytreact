@@ -16,8 +16,10 @@ var Main = React.createClass({
 
   handleNewNewsData: function (newsdata) {
     this.setState({ newsdata });
+  },
 
-    helpers.saveArticles({ newsdata })
+  handleSaveArticle: function(article) {
+    helpers.saveArticles({title: article.title, snippet: article.snippet, url: article.url})
       .then(function () {
         console.log("Posted to MongoDB");
       });
@@ -28,7 +30,7 @@ var Main = React.createClass({
       <div>
         <Header /><br />
         <Search onNewNewsData={this.handleNewNewsData} /><br />
-        <Results data={this.state.newsdata} /><br />
+        <Results data={this.state.newsdata} onSaveArticle={this.handleSaveArticle}/><br />
         <Saved /><br />
       </div>
     )

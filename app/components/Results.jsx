@@ -1,7 +1,9 @@
 var React = require('react');
 
 var ResultsScreen = React.createClass({
+  onClick: function(e) {
 
+  },
   renderNews: function () {
 
     if (this.props.data) {
@@ -14,7 +16,7 @@ var ResultsScreen = React.createClass({
             </div>
             <div className="card-action">
               <a href={article.web_url} target="_blank">Read more</a>
-              <a href="#" id="save">save</a>
+              <button id="save" onClick={this.props.onSaveArticle(article)}>save</button>
             </div>
           </div>
         )
