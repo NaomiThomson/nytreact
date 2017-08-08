@@ -1,7 +1,7 @@
 var React = require('react');
 var axios = require('axios');
 
-var SearchScreen = React.createClass({
+var Search = React.createClass({
   onFormSubmit: function (e) {
     e.preventDefault();
 
@@ -63,4 +63,4 @@ var SearchScreen = React.createClass({
   }
 })
 
-module.exports = SearchScreen;
+module.exports = Search;

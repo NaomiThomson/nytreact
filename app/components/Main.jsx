@@ -1,8 +1,8 @@
 var React = require('react');
 var Header = require('./Header.jsx');
 var Search = require('./Search.jsx');
-var Results = require('./ResultsList.jsx');
-var Saved = require('./SavedList.jsx');
+var ResultsList = require('./ResultsList.jsx');
+var SavedList = require('./SavedList.jsx');
 var helpers = require("../utils/helpers");
 
 var Main = React.createClass({
@@ -30,8 +30,8 @@ var Main = React.createClass({
       <div>
         <Header /><br />
         <Search onNewNewsData={this.handleNewNewsData} /><br />
-        <Results data={this.state.newsdata} onSaveArticle={this.handleSaveArticle}/><br />
-        <Saved /><br />
+        <ResultsList data={this.state.newsdata} onSaveArticle={this.handleSaveArticle}/><br />
+        <SavedList /><br />
       </div>
     )
   }

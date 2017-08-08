@@ -1,7 +1,7 @@
 var React = require('react');
 var Result = require('./Result.jsx');
 
-var ResultsScreen = React.createClass({
+var ResultsList = React.createClass({
   onSaveClick: function(e) {
 
   },
@@ -46,4 +46,4 @@ var ResultsScreen = React.createClass({
   }
 })
 
-module.exports = ResultsScreen;
+module.exports = ResultsList;
