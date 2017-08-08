@@ -17,7 +17,7 @@ var Main = React.createClass({
   handleNewNewsData: function (newsdata) {
     this.setState({ newsdata });
 
-    helpers.saveArticles({ title: this.state.title, snippet: this.state.snippet, url: this.state.url })
+    helpers.saveArticles({ newsdata })
       .then(function () {
         console.log("Posted to MongoDB");
       });

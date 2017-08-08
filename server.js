@@ -34,6 +34,44 @@ app.get("/", function (req, res) {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+// This is the route we will send GET requests to retrieve our most recent Article data.
+// We will call this route the moment our page gets rendered
+app.get("/api", function (req, res) {
+  // This GET request will search for the latest ArticleCount
+  Article.find({}).exec(function (err, doc) {
+    if (err) {
+      console.log(err);
+    }
+    else {
+      res.send(doc);
+    }
+  });
+});
+// This is the route we will send POST requests to save each Article.
+// We will call this route the moment the "Article" or "reset" button is pressed.
+app.post("/api", function (req, res) {
+
+  console.log(req);
+  // var title = req.body.title;
+  // var snippet = req.body.snippet;
+  // var url = req.body.url;
+  // // Note how this route utilizes the findOneAndUpdate function to update the ArticleCount
+  // // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
+  // // If included, Mongoose will create a new document matching the description if one is not found
+  // Article.create({
+  //   title : title,
+  //   snippet : snippet,
+  //   url : url
+  // }).exec(function (err) {
+  //     if (err) {
+  //       console.log(err);
+  //     }
+  //     else {
+  //       res.send("Updated Articles!");
+  //     }
+  //   });
+});
+
 app.listen(PORT, function () {
   console.log('Express server is up on port 3000');
 });
