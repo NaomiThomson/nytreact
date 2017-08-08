@@ -43,8 +43,7 @@ app.get("/api", function (req, res) {
   Article.find({}).exec(function (err, doc) {
     if (err) {
       console.log(err);
-    }
-    else {
+    } else {
       res.send(doc);
     }
   });
@@ -52,26 +51,22 @@ app.get("/api", function (req, res) {
 // This is the route we will send POST requests to save each Article.
 // We will call this route the moment the "Article" or "reset" button is pressed.
 app.post("/api", function (req, res) {
-  console.log(req);
-  console.log(req.body);
   var title = req.body.title;
   var snippet = req.body.snippet;
   var url = req.body.url;
+
+  console.log(title, snippet, url);
   // Note how this route utilizes the findOneAndUpdate function to update the ArticleCount
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
   // If included, Mongoose will create a new document matching the description if one is not found
-  Article.create({
-    title : title,
-    snippet : snippet,
-    url : url
-  }).exec(function (err) {
-      if (err) {
-        console.log(err);
-      }
-      else {
-        res.send("Updated Articles!");
-      }
-    });
+  var saved_article = new Article({
+    title: title,
+    snippet: snippet,
+    url: url
+  });
+
+  res.send(saved_article.title, saved_article.snippet, saved_article.url);
+
 });
 
 app.listen(PORT, function () {
