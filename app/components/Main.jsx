@@ -14,20 +14,13 @@ var Main = React.createClass({
     }
   },
 
-  // Whenever our component updates, the code inside componentDidUpdate is run
-  componentDidUpdate: function (prevState) {
-    console.log("COMPONENT UPDATED");
+  handleNewNewsData: function (newsdata) {
+    this.setState({ newsdata });
 
-    // If it does, then update the clickcount in MongoDB
     helpers.saveArticles({ title: this.state.title, snippet: this.state.snippet, url: this.state.url })
       .then(function () {
         console.log("Posted to MongoDB");
       });
-
-  },
-
-  handleNewNewsData: function (newsdata) {
-    this.setState({ newsdata });
   },
 
   render: function () {
