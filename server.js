@@ -1,6 +1,7 @@
 var express = require('express');
 // var Article = require('./models/article');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3000;
 
@@ -16,6 +17,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static('public'));
+app.use(bodyParser.json());
 
 // -------------------------------------------------
 // MongoDB configuration (Change this URL to your own DB)
