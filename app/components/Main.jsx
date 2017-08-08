@@ -1,8 +1,8 @@
 var React = require('react');
 var Header = require('./Header.jsx');
 var Search = require('./Search.jsx');
-var Results = require('./Results.jsx');
-var Saved = require('./Saved.jsx');
+var Results = require('./ResultsList.jsx');
+var Saved = require('./SavedList.jsx');
 var helpers = require("../utils/helpers");
 
 var Main = React.createClass({

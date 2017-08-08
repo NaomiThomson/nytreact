@@ -55,7 +55,6 @@ app.post("/api", function (req, res) {
   var snippet = req.body.snippet;
   var url = req.body.url;
 
-  console.log(title, snippet, url);
   // Note how this route utilizes the findOneAndUpdate function to update the ArticleCount
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
   // If included, Mongoose will create a new document matching the description if one is not found
@@ -65,7 +64,10 @@ app.post("/api", function (req, res) {
     url: url
   });
 
-  res.send(saved_article.title, saved_article.snippet, saved_article.url);
+  res.send({
+    title : saved_article.title, 
+    snippet : saved_article.snippet,  
+    url : saved_article.url});
 
 });
 
