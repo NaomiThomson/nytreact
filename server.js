@@ -50,6 +50,8 @@ app.get("/api", function (req, res) {
 // This is the route we will send POST requests to save each Article.
 // We will call this route the moment the "Article" or "reset" button is pressed.
 app.post("/api", function (req, res) {
+  console.log(req);
+  console.log(req.body);
   var title = req.body.title;
   var snippet = req.body.snippet;
   var url = req.body.url;
