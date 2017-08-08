@@ -1,5 +1,5 @@
 var express = require('express');
-// var Article = require('./models/article');
+var Article = require('./models/article');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
