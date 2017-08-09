@@ -5,11 +5,12 @@ var SavedList = React.createClass({
   renderSaved: function() {
     if (this.props.data) {
       return this.props.data.map((article) => {
-        return (
-          <div>
-            <Saved {...article} />
-          </div>
-        )
+        // return (
+        //   <div>
+        //     <Saved {...article} />
+        //   </div>
+        // )
+        return "hi";
       })
     }
   },

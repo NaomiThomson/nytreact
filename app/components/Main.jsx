@@ -8,6 +8,10 @@ var SavedList = require('./SavedList.jsx');
 var Saved = require('./Saved.jsx');
 
 var Main = React.createClass({
+  componentWillMount: function() {
+    this.getSaved();
+  },
+  
   getInitialState: function () {
     return {
       title: 'Search above to display articles here!',
@@ -28,7 +32,7 @@ var Main = React.createClass({
   },
 
   render: function () {
-    this.getSaved();
+    // this.getSaved();
     return (
       <div>
         <Header /><br />
