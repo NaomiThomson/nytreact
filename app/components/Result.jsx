@@ -3,13 +3,16 @@ var axios = require('axios');
 
 var Result = React.createClass({
   handleSaveClick: function () {
-    axios.post('/api', 
-    { title: this.props.title, 
-      snippet: this.props.snippet, 
-      url: this.props.url })
-      .then(function () {
-        console.log("Posted");
-        console.log(title + snippet + url);
+
+    var savedArticle = {
+      title: this.props.title,
+      snippet: this.props.snippet,
+      url: this.props.url
+    }
+
+    axios.post('/api', savedArticle)
+      .then((res) => {
+        console.log(res);
       });
   },
 
