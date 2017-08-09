@@ -38,7 +38,7 @@ var Main = React.createClass({
         <Header /><br />
         <Search onNewScrapedNews={this.handleNewScrapedNews} /><br />
         <ResultsList data={this.state.scrapedNews} onGetSaved={this.getSaved}/><br />
-        <SavedList data={this.state.savedArticles} /><br />
+        <SavedList data={this.state.savedArticles} onGetSaved={this.getSaved}/><br />
       </div>
     )
   }

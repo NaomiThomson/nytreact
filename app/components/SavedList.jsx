@@ -7,7 +7,7 @@ var SavedList = React.createClass({
       return this.props.data.map((article) => {
         return (
           <div>
-            <Saved {...article} />
+            <Saved {...article} onGetSaved={this.props.onGetSaved}/>
           </div>
         )
       })

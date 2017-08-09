@@ -10,7 +10,6 @@ var Search = React.createClass({
     var endyear = this.refs.endyear.value;
 
     this.getNews(topic, startyear, endyear);
-    console.log(this.props);
   },
 
   getNews: function (topic, startyear, endyear) {

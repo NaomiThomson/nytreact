@@ -9,14 +9,13 @@ var Result = React.createClass({
       url: this.props.web_url
     };
 
-    axios.post('http://frozen-reaches-18776.herokuapp.com/api', savedArticle)
+    axios.post('/api', savedArticle)
       .then((res) => {
         this.props.onGetSaved();
       });
   },
 
   render: function () {
-    console.log(this.props);
     return (
       <div className="card blue-grey darken-1">
         <div className="card-content white-text">

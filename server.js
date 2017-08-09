@@ -69,8 +69,6 @@ app.post("/api", function (req, res) {
 
   var article = new Article(body);
 
-  console.log(article);
-
   article.save().then((item) => {
     res.send({item})
   }).catch((e) => {

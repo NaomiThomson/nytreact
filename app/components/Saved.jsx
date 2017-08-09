@@ -9,10 +9,9 @@ var Saved = React.createClass({
       url: this.props.url
     };
 
-    console.log('!', this.props);
     axios.delete(`/api/${this.props._id}`)
     .then((res) => {
-      console.log(`${this.props._id} deleted`)
+      this.props.onGetSaved();
     })
   },
 
