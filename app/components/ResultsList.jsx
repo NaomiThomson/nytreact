@@ -8,7 +8,7 @@ var ResultsList = React.createClass({
       return this.props.data.map((article) => {
         return (
           <div>
-            <Result {...article} onSaveClick={this.handleSaveClick}/>
+            <Result {...article} />
           </div>
         )
       });

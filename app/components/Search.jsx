@@ -22,8 +22,7 @@ var Search = React.createClass({
       }
     })
       .then((res) => {
-        this.props.onNewNewsData(res.data.response.docs);
-        console.log('IN SEARCH!!!!!!! ' + res.data.response.docs);
+        this.props.onNewScrapedNews(res.data.response.docs);
       })
       .catch(function (error) {
         console.log(error);

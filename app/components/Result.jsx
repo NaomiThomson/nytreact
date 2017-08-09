@@ -3,14 +3,11 @@ var axios = require('axios');
 
 var Result = React.createClass({
   handleSaveClick: function () {
-    console.log('IN RESULT!!!!!! ' + this.props);
     var savedArticle = {
       title: this.props.headline.main,
       snippet: this.props.snippet,
       url: this.props.web_url
     };
-
-    console.log(savedArticle);
 
     axios.post('/api', savedArticle)
       .then((res) => {
@@ -27,7 +24,7 @@ var Result = React.createClass({
         </div>
         <div className="card-action">
           <a href={this.props.web_url} target="_blank">Read more</a>
-          <button id="save" onClick={this.handleSaveClick}>save</button>
+          <button className="waves-effect waves-light btn" id="save" onClick={this.handleSaveClick}>save</button>
         </div>
       </div>
     )

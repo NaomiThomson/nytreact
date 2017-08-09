@@ -1,6 +1,19 @@
 var React = require('react');
+var Saved = require('./Saved.jsx');
 
-var SavedArticles = React.createClass({
+var SavedList = React.createClass({
+  renderSaved: function() {
+    if (this.props.data) {
+      return this.props.data.map((article) => {
+        return (
+          <div>
+            <Saved {...article} />
+          </div>
+        )
+      })
+    }
+  },
+
   render: function () {
 
     return (
@@ -9,12 +22,7 @@ var SavedArticles = React.createClass({
         <div className="row">
           <div className="col s12 m12">
             <div className="card blue-grey darken-1">
-              <div className="card-content white-text">
-                <span className="card-title" href="#">Card Title</span>
-              </div>
-              <div className="card-action">
-                <a className="waves-effect waves-light btn" id="remove">remove</a>
-              </div>
+              {this.renderSaved()}
             </div>
           </div>
         </div>
@@ -23,4 +31,4 @@ var SavedArticles = React.createClass({
   }
 })
 
-module.exports = SavedArticles;
+module.exports = SavedList;

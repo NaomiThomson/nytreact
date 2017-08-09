@@ -1,4 +1,5 @@
 var React = require('react');
+var axios = require('axios');
 var Header = require('./Header.jsx');
 var Search = require('./Search.jsx');
 var ResultsList = require('./ResultsList.jsx');
@@ -13,20 +14,24 @@ var Main = React.createClass({
     }
   },
 
-  handleNewNewsData: function (newsdata) {
-    this.setState({ newsdata });
-    console.log('IN MAIN!!!!!!! ' + this.state.newsdata);
-    console.log('IN MAIN!!!!!!! ' + this.state.newsdata.title);
-    console.log('IN MAIN!!!!!!! ' + this.state.newsdata.url);
+  handleNewScrapedNews: function (scrapedNews) {
+    this.setState({ scrapedNews });
+  },
+
+  getSaved: function () {
+    axios.get('/api')
+      .then((res) => {
+        this.setState({ savedArticles: res.data })
+      })
   },
 
   render: function () {
     return (
       <div>
         <Header /><br />
-        <Search onNewNewsData={this.handleNewNewsData} /><br />
-        <ResultsList data={this.state.newsdata} onSaveArticle={this.handleSaveArticle}/><br />
-        <SavedList /><br />
+        <Search onNewScrapedNews={this.handleNewScrapedNews} /><br />
+        <ResultsList data={this.state.scrapedNews} /><br />
+        <SavedList data={this.state.savedArticles} /><br />
       </div>
     )
   }
