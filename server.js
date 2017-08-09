@@ -51,9 +51,9 @@ app.get("/api", function (req, res) {
 // This is the route we will send POST requests to save each Article.
 // We will call this route the moment the "Article" or "reset" button is pressed.
 app.post("/api", function (req, res) {
-  var title = req.body.title;
+  var title = req.body.headline.main;
   var snippet = req.body.snippet;
-  var url = req.body.url;
+  var url = req.body.web_url;
 
   // Note how this route utilizes the findOneAndUpdate function to update the ArticleCount
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
