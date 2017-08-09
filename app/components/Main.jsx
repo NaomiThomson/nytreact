@@ -15,7 +15,9 @@ var Main = React.createClass({
 
   handleNewNewsData: function (newsdata) {
     this.setState({ newsdata });
-    console.log('IN MAIN!!!!!!! ' + this.state);
+    console.log('IN MAIN!!!!!!! ' + this.state.newsdata);
+    console.log('IN MAIN!!!!!!! ' + this.state.newsdata.title);
+    console.log('IN MAIN!!!!!!! ' + this.state.newsdata.url);
   },
 
   render: function () {
