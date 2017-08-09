@@ -16,6 +16,15 @@ app.use(function (req, res, next) {
   }
 });
 
+app.use(function (req, res, next) {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PATCH');
+  res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type, Authorization, x-auth');
+  res.setHeader('Access-Control-Expose-Headers', 'x-auth');
+  next();
+});
+
+
 app.use(express.static('public'));
 app.use(bodyParser.json());
 

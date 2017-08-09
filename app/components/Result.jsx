@@ -9,7 +9,7 @@ var Result = React.createClass({
       url: this.props.web_url
     };
 
-    axios.post('/api', savedArticle)
+    axios.post('http://frozen-reaches-18776.herokuapp.com/api', savedArticle)
       .then((res) => {
         console.log(res);
         // this.props.onGetSaved();

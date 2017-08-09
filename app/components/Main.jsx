@@ -11,7 +11,7 @@ var Main = React.createClass({
   componentWillMount: function() {
     this.getSaved();
   },
-  
+
   getInitialState: function () {
     return {
       title: 'Search above to display articles here!',
@@ -25,7 +25,7 @@ var Main = React.createClass({
   },
 
   getSaved: function () {
-    axios.get('/api')
+    axios.get('http://frozen-reaches-18776.herokuapp.com/api')
       .then((res) => {
         this.setState({ savedArticles: res.data })
       })
