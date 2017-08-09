@@ -79,6 +79,17 @@ app.post("/api", function (req, res) {
 
 });
 
+app.delete('/api/:id', function(req, res) {
+  
+  Article.findByIdAndRemove({_id: req.params.id})
+  .then((res) => {
+    res.send('Deleted!')
+  })
+  .catch((err) => {
+    res.status(400).send(err)
+  })
+})
+
 // add axios delete here
 
 app.listen(PORT, function () {

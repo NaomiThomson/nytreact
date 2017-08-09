@@ -6,9 +6,10 @@ var ResultsList = React.createClass({
   renderNews: function () {
     if (this.props.data) {
       return this.props.data.map((article) => {
+        console.log(this.props);
         return (
           <div>
-            <Result {...article} />
+            <Result {...article} onGetSaved={this.props.onGetSaved}/>
           </div>
         )
       });

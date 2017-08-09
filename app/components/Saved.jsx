@@ -12,6 +12,7 @@ var Saved = React.createClass({
   },
 
   render: function() {
+
     return(
       <div className="card blue-grey darken-1">
         <div className="card-content white-text">
@@ -24,5 +25,7 @@ var Saved = React.createClass({
         </div>
       </div>
     )
-  }
+  } 
 })
+
+module.exports = Saved;

@@ -11,12 +11,12 @@ var Result = React.createClass({
 
     axios.post('http://frozen-reaches-18776.herokuapp.com/api', savedArticle)
       .then((res) => {
-        console.log(res);
-        // this.props.onGetSaved();
+        this.props.onGetSaved();
       });
   },
 
   render: function () {
+    console.log(this.props);
     return (
       <div className="card blue-grey darken-1">
         <div className="card-content white-text">
