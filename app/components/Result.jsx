@@ -9,6 +9,7 @@ var Result = React.createClass({
       url: this.props.url })
       .then(function () {
         console.log("Posted");
+        console.log(title + snippet + url);
       });
   },
 

@@ -58,15 +58,17 @@ app.post("/api", function (req, res) {
   // Note how this route utilizes the findOneAndUpdate function to update the ArticleCount
   // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
   // If included, Mongoose will create a new document matching the description if one is not found
-  var saved_article = new Article({
+  var article = new Article({
     title: title,
     snippet: snippet,
     url: url
   });
 
-  console.log(saved_article.title + saved_article.snippet + saved_article.url);
-
-  res.send("Posted to MongoDB");
+  article.save().then((item) => {
+    res.send({item})
+  }).catch((e) => {
+    console.log(e);
+  })
 
 });
 
