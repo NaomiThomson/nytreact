@@ -3,7 +3,9 @@ var axios = require('axios');
 var Header = require('./Header.jsx');
 var Search = require('./Search.jsx');
 var ResultsList = require('./ResultsList.jsx');
+var Result = require('./Result.jsx');
 var SavedList = require('./SavedList.jsx');
+var Saved = require('./Saved.jsx');
 
 var Main = React.createClass({
   getInitialState: function () {
@@ -26,12 +28,14 @@ var Main = React.createClass({
   },
 
   render: function () {
+    this.getSaved();
     return (
       <div>
         <Header /><br />
         <Search onNewScrapedNews={this.handleNewScrapedNews} /><br />
         <ResultsList data={this.state.scrapedNews} /><br />
         <SavedList data={this.state.savedArticles} /><br />
+        <Result onGetSaved={this.getSaved} />
       </div>
     )
   }

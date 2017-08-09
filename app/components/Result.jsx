@@ -12,6 +12,7 @@ var Result = React.createClass({
     axios.post('/api', savedArticle)
       .then((res) => {
         console.log(res);
+        this.props.onGetSaved();
       });
   },
 
