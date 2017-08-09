@@ -52,17 +52,15 @@ app.get("/api", function (req, res) {
 // We will call this route the moment the "Article" or "reset" button is pressed.
 app.post("/api", function (req, res) {
 
-  console.log(req.body);
-  
-  var title = req.body.headline.main;
-  var snippet = req.body.snippet;
-  var url = req.body.web_url;
+  var body = {
+    title: req.body.title,
+    snippet: req.body.snippet,
+    url: req.body.url
+  }
 
-  var article = new Article({
-    title: title,
-    snippet: snippet,
-    url: url
-  });
+  var article = new Article(body);
+
+  console.log(article);
 
   article.save().then((item) => {
     res.send({item})

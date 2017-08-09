@@ -5,10 +5,12 @@ var Result = React.createClass({
   handleSaveClick: function () {
     console.log('IN RESULT!!!!!! ' + this.props);
     var savedArticle = {
-      title: this.props.title,
+      title: this.props.headline.main,
       snippet: this.props.snippet,
-      url: this.props.url
-    }
+      url: this.props.web_url
+    };
+
+    console.log(savedArticle);
 
     axios.post('/api', savedArticle)
       .then((res) => {
