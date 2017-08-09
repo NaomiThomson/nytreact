@@ -3,7 +3,7 @@ var axios = require('axios');
 
 var Result = React.createClass({
   handleSaveClick: function () {
-
+    console.log('IN RESULT!!!!!! ' + this.props);
     var savedArticle = {
       title: this.props.title,
       snippet: this.props.snippet,

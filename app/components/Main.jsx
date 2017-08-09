@@ -15,14 +15,8 @@ var Main = React.createClass({
 
   handleNewNewsData: function (newsdata) {
     this.setState({ newsdata });
+    console.log('IN MAIN!!!!!!! ' + this.state);
   },
-
-  // handleSaveArticle: function(article) {
-  //   helpers.saveArticles({title: article.title, snippet: article.snippet, url: article.url})
-  //     .then(function () {
-  //       console.log("Posted to MongoDB");
-  //     });
-  // },
 
   render: function () {
     return (
