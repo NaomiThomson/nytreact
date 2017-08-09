@@ -82,10 +82,11 @@ app.post("/api", function (req, res) {
 app.delete('/api/:id', function(req, res) {
   
   Article.findByIdAndRemove({_id: req.params.id})
-  .then((res) => {
-    res.send('Deleted!')
+  .then((article) => {
+    res.send('Deleted!');
   })
   .catch((err) => {
+    console.log(err);
     res.status(400).send(err)
   })
 })

@@ -1,4 +1,5 @@
 var React = require('react');
+var axios = require('axios');
 
 var Saved = React.createClass({
   handleRemoveClick: function () {
@@ -8,7 +9,11 @@ var Saved = React.createClass({
       url: this.props.url
     };
 
-    // add axios post here
+    console.log('!', this.props);
+    axios.delete(`/api/${this.props._id}`)
+    .then((res) => {
+      console.log(`${this.props._id} deleted`)
+    })
   },
 
   render: function() {
