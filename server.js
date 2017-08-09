@@ -51,13 +51,13 @@ app.get("/api", function (req, res) {
 // This is the route we will send POST requests to save each Article.
 // We will call this route the moment the "Article" or "reset" button is pressed.
 app.post("/api", function (req, res) {
+
+  console.log(req.body);
+  
   var title = req.body.headline.main;
   var snippet = req.body.snippet;
   var url = req.body.web_url;
 
-  // Note how this route utilizes the findOneAndUpdate function to update the ArticleCount
-  // { upsert: true } is an optional object we can pass into the findOneAndUpdate method
-  // If included, Mongoose will create a new document matching the description if one is not found
   var article = new Article({
     title: title,
     snippet: snippet,
