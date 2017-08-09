@@ -1,35 +1,21 @@
 var React = require('react');
 var Result = require('./Result.jsx');
+var helpers = require("../utils/helpers");
 
 var ResultsList = React.createClass({
-  onSaveClick: function(e) {
-
-  },
   renderNews: function () {
-
     if (this.props.data) {
       return this.props.data.map((article) => {
-        // return (
-        //   <div className="card blue-grey darken-1">
-        //     <div className="card-content white-text">
-        //       <span className="card-title">{article.headline.main}</span>
-        //       <p>{article.snippet}</p>
-        //     </div>
-        //     <div className="card-action">
-        //       <a href={article.web_url} target="_blank">Read more</a>
-        //       <button id="save" onClick={this.onSaveClick}>save</button>
-        //     </div>
-        //   </div>
-        // )
         return (
           <div>
-            <Result/>
+            <Result {...article} onSaveClick={this.handleSaveClick}/>
           </div>
         )
       });
     }
 
   },
+
   render: function () {
     return (
       <div>
@@ -47,3 +33,5 @@ var ResultsList = React.createClass({
 })
 
 module.exports = ResultsList;
+
+

@@ -3,7 +3,6 @@ var Header = require('./Header.jsx');
 var Search = require('./Search.jsx');
 var ResultsList = require('./ResultsList.jsx');
 var SavedList = require('./SavedList.jsx');
-var helpers = require("../utils/helpers");
 
 var Main = React.createClass({
   getInitialState: function () {
@@ -18,12 +17,12 @@ var Main = React.createClass({
     this.setState({ newsdata });
   },
 
-  handleSaveArticle: function(article) {
-    helpers.saveArticles({title: article.title, snippet: article.snippet, url: article.url})
-      .then(function () {
-        console.log("Posted to MongoDB");
-      });
-  },
+  // handleSaveArticle: function(article) {
+  //   helpers.saveArticles({title: article.title, snippet: article.snippet, url: article.url})
+  //     .then(function () {
+  //       console.log("Posted to MongoDB");
+  //     });
+  // },
 
   render: function () {
     return (
