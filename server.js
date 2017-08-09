@@ -64,10 +64,9 @@ app.post("/api", function (req, res) {
     url: url
   });
 
-  res.send({
-    title : saved_article.title, 
-    snippet : saved_article.snippet,  
-    url : saved_article.url});
+  console.log(saved_article.title + saved_article.snippet + saved_article.url);
+
+  res.send("Posted to MongoDB");
 
 });
 

@@ -8,7 +8,7 @@ var Result = React.createClass({
       snippet: this.props.snippet, 
       url: this.props.url })
       .then(function () {
-        console.log("Posted to MongoDB");
+        console.log("Posted");
       });
   },
 
