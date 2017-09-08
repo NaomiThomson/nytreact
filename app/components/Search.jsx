@@ -13,12 +13,19 @@ var Search = React.createClass({
   },
 
   getNews: function (topic, startyear, endyear) {
+
+    if (endyear > 2016) {
+      let end_date = '20161231'
+    } else {
+      let end_date = `${endyear}1231`
+    }
+
     axios.get('https://api.nytimes.com/svc/search/v2/articlesearch.json', {
       params: {
         apikey: '872049e9e7824b7d9f866479292c4d9e',
         q: topic,
         begin_date: `${startyear}0101`,
-        end_date: `${endyear}1231`
+        end_date
       }
     })
       .then((res) => {
