@@ -5,7 +5,7 @@ var helpers = require("../utils/helpers");
 var ResultsList = React.createClass({
   renderNews: function () {
     if (this.props.data) {
-      return this.props.data.map((article) => {
+      return this.props.data.slice(0).reverse().map((article) => {
         return (
           <div>
             <Result {...article} onGetSaved={this.props.onGetSaved}/>
