@@ -4,7 +4,7 @@ var Saved = require('./Saved.jsx');
 var SavedList = React.createClass({
   renderSaved: function() {
     if (this.props.data) {
-      return this.props.data.map((article) => {
+      return this.props.data.slice(0).reverse().map((article) => {
         return (
           <div>
             <Saved {...article} onGetSaved={this.props.onGetSaved}/>
